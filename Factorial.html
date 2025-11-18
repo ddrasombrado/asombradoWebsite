@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Factorial</title>
+
+        <style>
+
+            body {
+                margin: 0;
+                background-image: url('G1xK8dIacAA0uaF.jfif'); 
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            .box {
+                background-color: white;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                width: 500px;
+            }
+
+</style>
+
+    </head>
+
+    <body>
+
+        <div class="box">
+
+        <a href="index.html">Return to Homepage</a>
+
+        <h1>nth Factorial, Sum, and Average</h1> <br>
+
+        <label for="num">Enter an integer</label>
+        <input id="num" type="number">
+        <button onclick="compute()">Result</button>
+
+        <h3>Factorial: </h3>
+        <h3 id="fact"></h3>
+
+        <h3>Sum: </h3>
+        <h3 id="sum"></h3>
+
+        <h3>Average: </h3>
+        <h3 id="avg"></h3>
+
+        </div>
+
+        <script>
+
+            var n;
+            
+            function factorial(){
+
+                var i = 1;
+                var result = 1;
+
+                while (i <= n){
+                    result *= i;
+                    i++;
+                }
+                
+                return result;
+
+            }
+
+            function sum(){
+
+                var i = 1;
+                var result = 0;
+                do{
+                    result += i;
+                    i++;
+                }
+                while (i <= n);
+
+                return result;
+
+            }
+
+            function average(){
+
+                var result = 0;
+
+                for (var i = 1; i <= n; i++){
+                    result += i;
+                }
+
+                return result/n;
+
+
+            }
+
+            function compute(){
+
+                n = document.getElementById("num").value;
+                document.getElementById("fact").innerHTML = factorial();
+                document.getElementById("sum").innerHTML = sum();
+                document.getElementById("avg").innerHTML = average();
+
+            }
+        </script>
+    </body>
+</html>

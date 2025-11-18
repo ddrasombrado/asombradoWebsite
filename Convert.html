@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Conversion</title>
+
+        <style>
+
+	    body {
+            margin: 0;
+            background-image: url('G1xK8dIacAA0uaF.jfif'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .box {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 800px;
+        }
+
+    </style>
+
+    </head>
+
+    <body>
+
+        <div class="box">
+
+        <a href="index.html">Return to Homepage</a> 
+        
+        <h1>Temperature Conversions</h1><br>
+
+        <label for="celsius">Celsius to Farenheit</label>
+        <input id="celsius" type="number">
+        <button onclick="celToFar()">Convert</button><br>
+
+        <h2 id="result"></h2><br>
+        
+        <label for="farenheit">Farenheit to Celsius</label>
+        <input id="farenheit" type="number">
+        <button onclick="farToCel()">Convert</button><br>
+
+        <h2 id="result2"></h2><br>
+
+        <h1>Length Conversions</h1><br>
+
+        <label for="meter">Meters to Feet</label>
+        <input id="meter" type="number">
+        <button onclick="mToFt()">Convert</button><br>
+
+        <h2 id="result3"></h2><br>
+
+        <label for="feet">Feet to Meters</label>
+        <input id="feet" type="number">
+        <button onclick="ftToM()">Convert</button><br>
+        
+        <h2 id="result4"></h2><br>
+        
+    </div>    
+    <script>
+        function celToFar(){
+
+            var celsius = document.getElementById("celsius").value;
+            var farenheit = (celsius * 9/5) + 32;
+            document.getElementById("result").innerHTML
+                = celsius + 'C is ' + farenheit + 'F';
+            document.getElementById("celsius").value = '';
+
+        }
+
+        function farToCel(){
+
+            var farenheit = document.getElementById("farenheit").value;
+            var celsius = (farenheit - 32) * 5/9;
+            document.getElementById("result2").innerHTML
+                = farenheit + 'F is ' + celsius + 'C';
+            document.getElementById("farenheit").value = '';
+
+        }
+
+        function mToFt(){
+
+            var meter = document.getElementById("meter").value;
+            var feet = (meter * 3.28084);
+            document.getElementById("result3").innerHTML
+                = meter + 'm is ' + feet + 'ft';
+            document.getElementById("meter").value = '';
+
+        }
+
+        function ftToM(){
+
+            var feet = document.getElementById("feet").value;
+            var meter = (feet / 3.28084);
+            document.getElementById("result4").innerHTML
+                = feet + 'ft is ' + meter + 'm';
+            document.getElementById("feet").value = '';
+
+        }
+    </script>
+    </body>
+</html>

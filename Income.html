@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Income Tax</title>
+
+        <style>
+            body {
+                margin: 0;
+                background-image: url('G1xK8dIacAA0uaF.jfif'); 
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            .box {
+                background-color: white;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                width: 500px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="box">
+
+        <a href="index.html">Return to Homepage</a>
+
+        <h1>Income Tax Calculator</h1>
+        <br>
+
+        <label for="income">Enter Taxable Income</label>
+        <input id="income" type="number">
+        <button onclick="compute()">Compute Tax</button>
+        <br>
+
+        <h2 id="result">Income Tax: P0.0</h2>
+
+        </div>
+
+        <script>
+
+            function compute(){
+
+                var tax = 1;
+                var income = document.getElementById("income").value;
+                if (income <= 250000){
+                    tax = 0;
+                }
+                else if (income <= 400000) {
+                    tax = 0.20 * (income - 250000);
+                }
+                else if (income <= 800000) {
+                    tax = 30000 + 0.25 * (income - 400000);
+                 }
+                else if (income <= 2000000) {
+                    tax = 130000 + 0.30 * (income - 800000);
+                 }
+                else if (income <= 8000000) {
+                    tax = 490000 + 0.32 * (income - 2000000);
+                }
+                else {
+                tax = 2410000 + 0.35 * (income - 8000000);
+                }
+
+                document.getElementById("result").innerHTML
+                    ='Income Tax: P' + tax;
+
+            }
+
+        </script>
+    </body>
+</html>
